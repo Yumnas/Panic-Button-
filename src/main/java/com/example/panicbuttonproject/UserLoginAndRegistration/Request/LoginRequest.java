@@ -1,4 +1,4 @@
-package com.example.panicbuttonproject.UserLoginAndRegistration.DTOclass;
+package com.example.panicbuttonproject.UserLoginAndRegistration.Request;
 
 public class LoginRequest {
     private String username;
