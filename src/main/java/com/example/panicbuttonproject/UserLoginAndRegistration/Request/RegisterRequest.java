@@ -1,8 +1,6 @@
-package com.example.panicbuttonproject.UserLoginAndRegistration.DTOclass;
+package com.example.panicbuttonproject.UserLoginAndRegistration.Request;
 
 import jakarta.persistence.Column;
-
-import java.time.LocalDateTime;
 
 public class RegisterRequest {
     private String userName;
@@ -51,5 +49,4 @@ public class RegisterRequest {
     public void setEmail(String email) {
         this.email = email;
     }
-
 }
