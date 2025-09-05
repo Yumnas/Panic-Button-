@@ -1,15 +1,15 @@
 package com.example.panicbuttonproject.UserLoginAndRegistration.Service;
 
-import com.example.panicbuttonproject.UserLoginAndRegistration.DTOclass.PanicAlertRequest;
+import com.example.panicbuttonproject.UserLoginAndRegistration.Request.PanicAlertRequest;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Entity.PanicAlert;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Entity.UserEntity;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Repository.PanicAlertRepository;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDateTime;
+
 @Service
 public class PanicAlertServiceImpl implements PanicAlertService {
 
@@ -26,6 +26,7 @@ public class PanicAlertServiceImpl implements PanicAlertService {
     PanicAlert alert = PanicAlert.builder()
             .message(panicAlertRequest.getMessage())
             .user(user)
+            .localDateTime(LocalDateTime.now())
             .build();
 
     return panicAlertRepository.save(alert);

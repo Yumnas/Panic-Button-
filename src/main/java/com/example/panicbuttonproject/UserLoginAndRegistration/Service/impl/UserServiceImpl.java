@@ -1,15 +1,14 @@
 package com.example.panicbuttonproject.UserLoginAndRegistration.Service;
 
 import com.example.panicbuttonproject.UserLoginAndRegistration.Configuration.JwtService;
-import com.example.panicbuttonproject.UserLoginAndRegistration.DTOclass.RegisterRequest;
-import com.example.panicbuttonproject.UserLoginAndRegistration.DTOclass.ResetPasswordRequest;
+import com.example.panicbuttonproject.UserLoginAndRegistration.Request.RegisterRequest;
+import com.example.panicbuttonproject.UserLoginAndRegistration.Request.ResetPasswordRequest;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Entity.Role;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Entity.UserEntity;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 import java.util.List;
