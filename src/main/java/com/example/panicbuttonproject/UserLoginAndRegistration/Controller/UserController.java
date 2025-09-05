@@ -1,18 +1,10 @@
 package com.example.panicbuttonproject.UserLoginAndRegistration.Controller;
 
-import com.example.panicbuttonproject.UserLoginAndRegistration.DTOclass.ForgotPasswordRequest;
-import com.example.panicbuttonproject.UserLoginAndRegistration.DTOclass.ResetPasswordRequest;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Entity.UserEntity;
-import com.example.panicbuttonproject.UserLoginAndRegistration.Repository.UserRepository;
+import com.example.panicbuttonproject.UserLoginAndRegistration.Response.BaseResponse;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Map;
 
 @RestController
 public class UserController {
@@ -20,19 +12,30 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/GetAllUsers")
-    public ResponseEntity<List<UserEntity>> getAllUsers() {
-        return ResponseEntity.ok(userService.getAllUsers());
+    public BaseResponse<?> getAllUsers() {
+        try {
+            return new BaseResponse<>("200", "Users fetched successfully", userService.getAllUsers());
+        } catch (RuntimeException ex) {
+            return new BaseResponse<>("400", "Failed to fetch users: " + ex.getMessage(), null);
+        }
     }
-
     @PatchMapping("/UpdateEmployee/{id}")
-    public ResponseEntity<UserEntity> updateEmployee(@PathVariable("id") long id, @RequestBody UserEntity user) {
-        return ResponseEntity.ok(userService.updateUser(id, user));
+    public BaseResponse<?> updateEmployee(@PathVariable("id") long id, @RequestBody UserEntity user) {
+        try {
+            UserEntity updatedUser = userService.updateUser(id, user);
+            return new BaseResponse<>("200", "User updated successfully", updatedUser);
+        } catch (RuntimeException ex) {
+            return new BaseResponse<>("400", "Failed to update user: " + ex.getMessage(), null);
+        }
     }
-
     @DeleteMapping("/DeleteUser/{id}")
-    public ResponseEntity<Map<String, String>> deleteUser(@PathVariable("id") long id) {
-        String result = userService.deleteUser(id);
-        return ResponseEntity.ok(Map.of("message", result));
+    public BaseResponse<?> deleteUser(@PathVariable("id") long id) {
+        try {
+            String result = userService.deleteUser(id);
+            return new BaseResponse<>("200", result, null);
+        } catch (RuntimeException ex) {
+            return new BaseResponse<>("400", "Failed to delete user: " + ex.getMessage(), null);
+        }
     }
 
 }
