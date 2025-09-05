@@ -1,7 +1,7 @@
 package com.example.panicbuttonproject.UserLoginAndRegistration.Service;
 
-import com.example.panicbuttonproject.UserLoginAndRegistration.DTOclass.RegisterRequest;
-import com.example.panicbuttonproject.UserLoginAndRegistration.DTOclass.ResetPasswordRequest;
+import com.example.panicbuttonproject.UserLoginAndRegistration.Request.RegisterRequest;
+import com.example.panicbuttonproject.UserLoginAndRegistration.Request.ResetPasswordRequest;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Entity.UserEntity;
 
 import java.util.List;
