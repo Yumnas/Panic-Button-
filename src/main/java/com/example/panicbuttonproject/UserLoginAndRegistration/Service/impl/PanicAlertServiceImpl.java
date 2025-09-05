@@ -1,10 +1,11 @@
-package com.example.panicbuttonproject.UserLoginAndRegistration.Service;
+package com.example.panicbuttonproject.UserLoginAndRegistration.Service.impl;
 
 import com.example.panicbuttonproject.UserLoginAndRegistration.Request.PanicAlertRequest;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Entity.PanicAlert;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Entity.UserEntity;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Repository.PanicAlertRepository;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Repository.UserRepository;
+import com.example.panicbuttonproject.UserLoginAndRegistration.Service.PanicAlertService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
