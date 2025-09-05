@@ -1,11 +1,14 @@
-package com.example.panicbuttonproject.UserLoginAndRegistration.Service;
+package com.example.panicbuttonproject.UserLoginAndRegistration.Service.impl;
 
 import com.example.panicbuttonproject.UserLoginAndRegistration.Configuration.JwtService;
+import com.example.panicbuttonproject.UserLoginAndRegistration.Repository.PanicAlertRepository;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Request.RegisterRequest;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Request.ResetPasswordRequest;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Entity.Role;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Entity.UserEntity;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Repository.UserRepository;
+import com.example.panicbuttonproject.UserLoginAndRegistration.Service.EmailService;
+import com.example.panicbuttonproject.UserLoginAndRegistration.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,7 +18,7 @@ import java.util.List;
 import java.util.Random;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private EmailService emailService;
@@ -23,11 +26,13 @@ public class UserServiceImpl implements UserService{
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
+    private final PanicAlertRepository panicAlertRepository;
 
-    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, JwtService jwtService) {
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, JwtService jwtService, PanicAlertRepository panicAlertRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtService = jwtService;
+        this.panicAlertRepository = panicAlertRepository;
     }
     @Override
     public UserEntity registerUser(RegisterRequest registerRequest) {
@@ -79,6 +84,7 @@ public class UserServiceImpl implements UserService{
     }
     @Override
     public String deleteUser(Long id) {
+        panicAlertRepository.deleteByUserId(id);
         userRepository.deleteById(id);
         return "Employee is deleted Successfully from the database for id " + id;
     }
