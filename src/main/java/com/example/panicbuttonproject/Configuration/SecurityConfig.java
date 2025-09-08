@@ -1,4 +1,4 @@
-package com.example.panicbuttonproject.UserLoginAndRegistration.Configuration;
+package com.example.panicbuttonproject.Configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
