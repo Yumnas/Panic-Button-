@@ -1,4 +1,4 @@
-package com.example.panicbuttonproject.UserLoginAndRegistration.Configuration;
+package com.example.panicbuttonproject.Configuration;
 
 import com.example.panicbuttonproject.UserLoginAndRegistration.Entity.UserEntity;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Repository.UserRepository;
