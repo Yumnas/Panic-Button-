@@ -1,6 +1,6 @@
 package com.example.panicbuttonproject.UserLoginAndRegistration.Service.impl;
 
-import com.example.panicbuttonproject.UserLoginAndRegistration.Configuration.JwtService;
+import com.example.panicbuttonproject.Configuration.JwtService;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Repository.PanicAlertRepository;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Request.RegisterRequest;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Request.ResetPasswordRequest;
