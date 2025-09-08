@@ -1,4 +1,4 @@
-package com.example.panicbuttonproject.UserLoginAndRegistration.Configuration;
+package com.example.panicbuttonproject.Configuration;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
