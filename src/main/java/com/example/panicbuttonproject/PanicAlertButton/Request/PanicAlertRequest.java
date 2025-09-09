@@ -1,4 +1,4 @@
-package com.example.panicbuttonproject.UserLoginAndRegistration.Request;
+package com.example.panicbuttonproject.PanicAlertButton.Request;
 
 public class PanicAlertRequest {
     private String message;
