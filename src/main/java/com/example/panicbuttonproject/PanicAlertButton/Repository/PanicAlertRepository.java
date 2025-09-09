@@ -1,6 +1,6 @@
-package com.example.panicbuttonproject.UserLoginAndRegistration.Repository;
+package com.example.panicbuttonproject.PanicAlertButton.Repository;
 
-import com.example.panicbuttonproject.UserLoginAndRegistration.Entity.PanicAlert;
+import com.example.panicbuttonproject.PanicAlertButton.Entity.PanicAlert;
 import com.example.panicbuttonproject.UserLoginAndRegistration.Entity.UserEntity;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
