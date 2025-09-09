@@ -1,7 +1,7 @@
-package com.example.panicbuttonproject.UserLoginAndRegistration.Service;
+package com.example.panicbuttonproject.PanicAlertButton.Service;
 
-import com.example.panicbuttonproject.UserLoginAndRegistration.Request.PanicAlertRequest;
-import com.example.panicbuttonproject.UserLoginAndRegistration.Entity.PanicAlert;
+import com.example.panicbuttonproject.PanicAlertButton.Request.PanicAlertRequest;
+import com.example.panicbuttonproject.PanicAlertButton.Entity.PanicAlert;
 
 public interface PanicAlertService {
     PanicAlert sendPanicAlert(PanicAlertRequest panicAlertRequest, String username );
