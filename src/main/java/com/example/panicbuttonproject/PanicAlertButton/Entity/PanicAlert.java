@@ -1,5 +1,6 @@
-package com.example.panicbuttonproject.UserLoginAndRegistration.Entity;
+package com.example.panicbuttonproject.PanicAlertButton.Entity;
 
+import com.example.panicbuttonproject.UserLoginAndRegistration.Entity.UserEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
