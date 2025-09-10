@@ -35,4 +35,6 @@ public class AlertHistoryEntity {
     private DeliveryStatus status;
 
     private LocalDateTime deliveredAt;
+
+    private String LocationLink;
 }
