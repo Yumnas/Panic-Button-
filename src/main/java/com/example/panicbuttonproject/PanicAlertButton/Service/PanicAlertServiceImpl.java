@@ -98,6 +98,7 @@ public class PanicAlertServiceImpl implements PanicAlertService {
                         .contact(contact)
                         .status(DeliveryStatus.SENT)
                         .deliveredAt(LocalDateTime.now())
+                        .LocationLink(locationLink)
                         .build();
                 alertHistoryRepository.save(history);
             } catch (Exception e) {
@@ -107,6 +108,7 @@ public class PanicAlertServiceImpl implements PanicAlertService {
                         .contact(contact)
                         .status(DeliveryStatus.FAILED)
                         .deliveredAt(LocalDateTime.now())
+                        .LocationLink(locationLink)
                         .build();
                 alertHistoryRepository.save(history);
             }
